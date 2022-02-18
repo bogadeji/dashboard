@@ -1,5 +1,5 @@
 <template>
-        <button :class="{ 'outline': outline, 'primary': primary}" class="base-button flex">
+        <button :class="{ 'outline': outline, 'primary': primary, 'tertiary': tertiary}" class="base-button flex">
             <slot>Button</slot>
         </button>
 </template>
@@ -15,6 +15,10 @@ export default {
                     type: Boolean,
                     default: false
                 },
+                tertiary: {
+                    type: Boolean,
+                    default: false
+                }
             },
     data() {
         return {
@@ -42,6 +46,12 @@ export default {
         background: hsla(259, 63%, 59%, 1);
         box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
         color: hsla(0, 0%, 100%, 1);
+        border: unset;
+    }
+    .base-button.tertiary {
+        background: hsla(264, 100%, 98%, 1);
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+        color: hsla(258, 54%, 52%, 1);
         border: unset;
     }
 </style>

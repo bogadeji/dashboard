@@ -22,7 +22,11 @@
         </div>
 
         <div class="filter-search flex">
-          <div></div>
+          <div class="flex">
+            <Button tertiary><span>All time</span><img src="~/static/icons/close.svg" alt=""/></Button>
+            <Button tertiary><span>US, AU, +4</span><img src="~/static/icons/close.svg" alt=""/></Button>
+            <Button outline><img src="~/static/icons/filter.svg" alt=""><span>More filters</span></Button>
+          </div>
           <Search placeholder="Search" class="search" />
         </div>
 
@@ -185,6 +189,9 @@ export default {
   .filter-search {
     justify-content: space-between;
     margin-block: 1.5rem;
+  }
+  .filters {
+    display: inline-block;
   }
   .actions {
     justify-content: flex-end;
