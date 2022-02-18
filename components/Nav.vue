@@ -46,6 +46,6 @@
 </style>
 <style>
     .v-application a {
-        color: inherit;
+        color: hsla(217, 23%, 27%, 1) !important;
     }
 </style>
