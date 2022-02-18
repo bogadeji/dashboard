@@ -44,3 +44,8 @@
         float: right;
     }
 </style>
+<style>
+    .v-application a {
+        color: inherit;
+    }
+</style>

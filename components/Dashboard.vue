@@ -8,7 +8,7 @@
       <div class="mx-7rem">
         <div class="header flex">
             <div class="header-heading flow">
-                <h1 class="fs-600 fw-bold heading">Welcome back, Olivia<span class="material-icons md-light">&#xF0132;</span></h1>
+                <h1 class="fs-600 fw-bold heading">Welcome back, Olivia</h1>
                 <p class="sub-heading">Track, manage and forecast your customers and orders.</p>
             </div>
             <div class="header-btns flex">
