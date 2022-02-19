@@ -79,6 +79,9 @@ export default {
 }
 </script>
 <style scoped>
+.customer-table p {
+  margin: 0;
+}
 .logo {
   width: 40px;
   height: 40px;
