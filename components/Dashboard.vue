@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div class="dashboard">
       
         <hr />
           <DashboardNav class="mx-7rem" />
@@ -161,6 +161,90 @@ export default {
               {name: '',img: 'user7.svg',},{name: '',img: 'user12.svg',},{name: '',img: 'user8.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user4.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
             ]
           },
+           {
+            name: 'Catalog2',
+            website: 'getcircooles.com',
+            logo: 'catalog.svg',
+            licenseUse: 90,
+            status: 'churned',
+            description: 'Content curating app',
+            tagline: 'Brings all your news into one place',
+            users: [
+              {name: '',img: 'user1.svg',},{name: '',img: 'user2.svg',},{name: '',img: 'user3.svg',},{name: '',img: 'user4.svg',},{name: '',img: 'user5.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
+            ]
+          },
+          {
+            name: 'Circooles2',
+            website: 'getcircooles.com',
+            logo: 'circooles.svg',
+            licenseUse: 70,
+            status: 'churned',
+            description: 'Content curating app',
+            tagline: 'Brings all your news into one place',
+            users: [
+              {name: '',img: 'user6.svg',},{name: '',img: 'user7.svg',},{name: '',img: 'user8.svg',},{name: '',img: 'user9.svg',},{name: '',img: 'user10.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
+            ]
+          },
+          {
+            name: 'Command+R2',
+            website: 'cmdr.ai',
+            logo: 'cmdr.svg',
+            licenseUse: 40,
+            status: 'customer',
+            description: 'Design software',
+            tagline: 'Super lightweight design app',
+            users: [
+              {name: '',img: 'user10.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user12.svg',},{name: '',img: 'user9.svg',},{name: '',img: 'user13.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
+            ]
+          },
+          {
+            name: 'Hourglass2',
+            website: 'hourglass.app',
+            logo: 'hourglass.svg',
+            licenseUse: 80,
+            status: 'customer',
+            description: 'Data prediction',
+            tagline: 'AI and machine learning data',
+            users: [
+              {name: '',img: 'user5.svg',},{name: '',img: 'user2.svg',},{name: '',img: 'user6.svg',},{name: '',img: 'user7.svg',},{name: '',img: 'user11.svg',},{name: '',img: '',},{name: '',img: '',}
+            ]
+          },
+          {
+            name: 'Layers2',
+            website: 'getlayers.io',
+            logo: 'layers.svg',
+            licenseUse: 30,
+            status: 'churned',
+            description: 'Productivity app',
+            tagline: 'Time management and productivity',
+            users: [
+              {name: '',img: 'user3.svg',},{name: '',img: 'user6.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user9.svg',},{name: '',img: 'user10.svg',}
+            ]
+          },
+          {
+            name: 'Quotient2',
+            website: 'quotient.cco',
+            logo: 'quotient.svg',
+            licenseUse: 20,
+            status: 'customer',
+            description: 'Web app intergrations',
+            tagline: 'Connect web apps seamlessly',
+            users: [
+              {name: '',img: 'user5.svg',},{name: '',img: 'user3.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user6.svg',},{name: '',img: 'user12.svg',},{name: '',img: '',}
+            ]
+          },
+          {
+            name: 'Sisyphus2',
+            website: 'sisyphus.com',
+            logo: 'sisyphus.svg',
+            licenseUse: 50,
+            status: 'customer',
+            description: 'Sales CRM',
+            tagline: 'Web-based sales doc management',
+            users: [
+              {name: '',img: 'user7.svg',},{name: '',img: 'user12.svg',},{name: '',img: 'user8.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user4.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
+            ]
+          },
         ],
       }
     },
@@ -168,7 +252,9 @@ export default {
 }
 </script>
 <style scoped>
-
+  .dashboard {
+    margin-bottom: 96px;
+  }
   .header {
     margin-block: 3rem;
   }

@@ -4,6 +4,10 @@
               :items="customers"
               :search="search"
               show-select
+              hide-default-footer
+              :page.sync="page"
+              :items-per-page="itemsPerPage"
+              @page-count="pageCount=$event"
               class="customer-table"
             >
             <template v-slot:[`item.name`]="{ item }">
@@ -52,6 +56,14 @@
                   <button @click="deleteItem(item)"><img src="~/static/icons/edit.svg" alt="" /></button>
                 </div>
               </template>
+
+              <template v-slot:footer>
+                <div class="flex footer">
+                  <v-pagination class="pagination" v-model="page" :length="pageCount" prev-icon="" next-icon=""></v-pagination>
+                  <div class="page-no"><span>Page {{page}} of {{pageCount}}</span></div>
+                </div>
+
+              </template>
             </v-data-table>
 </template>
 <script>
@@ -73,7 +85,9 @@ export default {
     },
     data() {
         return {
-            
+            page: 1,
+            pageCount: 0,
+            itemsPerPage: 10
         }
     }
 }
@@ -118,11 +132,14 @@ export default {
   .tagline, .website {
     color: hsla(220, 13%, 46%, 1);
   }
-    ::v-deep table{
+  .v-data-table.customer-table.theme--light {
         border: 1px solid hsla(220, 17%, 93%, 1) ;
         border-radius: 8px;
         box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
-        color: #667085;
+        
+
+  }
+    ::v-deep table{color: #667085;
         font-size: 12px;
         font-weight: var(--fs-bold);
     }
@@ -130,6 +147,14 @@ export default {
         /* border-radius: 0 0 8px 8px; */
         color: red;
 
+    }
+
+    .footer {
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid hsla(220, 17%, 93%, 1);
+      padding: 10px 25px;
+      font-size: 14px;
     }
     </style>
     <style>
@@ -191,5 +216,33 @@ export default {
  
       background-color: hsla(210, 24%, 98%, 1);
     }
-
+.pagination ul li:not(:first-child):not(:last-child) {
+  display: none;
+}
+.pagination li button {
+  padding: 0.5rem 1rem;
+  width: min-content;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 6px; 
+  border: 1px solid hsla(216, 16%, 84%, 1);
+  color: hsla(217, 23%, 27%, 1);
+  font-size: 14px;
+}
+.pagination li button > * {
+  display: none;
+}
+.pagination li:first-child button::after {
+    content: 'Previous';
+    visibility: visible;
+    display: block;
+    position: relative;
+    font-size: 12px;
+}
+.pagination li:last-child button::after {
+    content: 'Next';
+    visibility: visible;
+    display: block;
+    position: relative;
+    font-size: 12px;
+}
 </style>
