@@ -7,7 +7,7 @@
         <div class="flex data">
             <div class="data flow">
                 <p class="fs-700 fw-bolder value">{{ data.value }}</p>
-                <p class="fs-200 growth-rate" v-if="data.growthRate">
+                <p class="fs-200 growth-rate line-clamp" v-if="data.growthRate">
                     <span :class="{ fall: data.growthRate < 0, rise: data.growthRate > 0 }" class="growth-rate fw-bold">
                         <span v-if="data.growthRate < 0"><img src="~/static/icons/fall.svg" alt="" /></span>
                         <span v-if="data.growthRate > 0"><img src="~/static/icons/rise.svg" alt="" /></span>

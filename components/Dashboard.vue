@@ -1,11 +1,8 @@
 <!-- Please remove this file from your project -->
 <template>
   <div class="dashboard">
-      
-        <hr />
-          <DashboardNav class="mx-7rem" />
-          <hr />
-      <div class="mx-7rem">
+          <DashboardNav class="mx-comp desktop-only" />
+      <div class="mx-comp">
         <div class="header flex">
             <div class="header-heading flow">
                 <h1 class="fs-600 fw-bold heading">Welcome back, Olivia</h1>
@@ -22,10 +19,14 @@
         </div>
 
         <div class="filter-search flex">
-          <div class="flex">
-            <Button tertiary><span>All time</span><img src="~/static/icons/close.svg" alt=""/></Button>
-            <Button tertiary><span>US, AU, +4</span><img src="~/static/icons/close.svg" alt=""/></Button>
-            <Button outline><img src="~/static/icons/filter.svg" alt=""><span>More filters</span></Button>
+          <div class="filter flex">
+            <span class="flex">
+              <Button tertiary><span>All time</span><img src="~/static/icons/close.svg" alt=""/></Button>
+              <Button tertiary><span>US, AU, +4</span><img src="~/static/icons/close.svg" alt=""/></Button>
+              
+              <Button outline class="desktop-and-tablet"><img src="~/static/icons/filter.svg" alt="" ><span>More filters</span></Button>
+            </span>
+            <Button outline class="mobile-only edit-filters"><img src="~/static/icons/filter.svg" alt="" ><span>Edit filters</span></Button>
           </div>
           <Search placeholder="Search" class="search" />
         </div>
@@ -270,6 +271,34 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     --gap: 1.5rem;
     margin: 2rem 0;
+  }
+  @media (max-width: 1120px) {
+    .analytics {
+    grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 780px) {
+    .header {
+      flex-direction: column
+    }
+    .header-btns {
+    justify-content: flex-start;
+    }
+    .filter-search, .filter {
+      flex-direction: column-reverse;
+    }
+    .search {
+      max-width: 100% !important;
+      width: 100%;
+    }
+    .edit-filters {
+      --gap: 1rem;
+      width: 100%;
+      max-width: 100%;
+    }
+    .edit-filters > * {
+      margin: 0 0.5rem;
+    }
   }
 
   .filter-search {

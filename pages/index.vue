@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Nav />
     <Dashboard/>
   </div>
 </template>
@@ -10,17 +9,12 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',
-  layout: 'empty',
-  head() {
-    return {
-      link: [
-        { rel: "preconnect", href:"https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true},
-        { href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap", rel: "stylesheet"},
-        { href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet" }
-      ]
-    }
+  data() {
+      return {
+            
+      }
   }
+  
 })
 </script>
 <style >
@@ -272,9 +266,19 @@ a {
     line-height: 1.1;
 }
 
-.mx-7rem {
-    margin-left: 7rem;
-    margin-right: 7rem;
+.line-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.mx-comp {
+    margin-inline: 7rem;
+}
+
+.mobile-only {
+    display: none;
 }
 
 hr {
@@ -282,4 +286,33 @@ hr {
     background: #EAECF0;
     height: 1px;
 }
+
+
+@media (min-width: 1200px) {
+    .mobile-and-tablet {
+        display: none;
+    }
+}
+@media (max-width: 1200px) {
+    .desktop-only {
+        display: none;
+    }
+}
+@media (max-width: 1290px) {
+    .mx-comp {
+        margin-inline: 4rem
+    }
+}
+@media (max-width: 780px) {
+    .mobile-only {
+        display: block;
+    }
+    .desktop-and-tablet {
+        display: none;
+    }
+    .mx-comp {
+        margin-inline: 1rem
+    }
+}
+
 </style>

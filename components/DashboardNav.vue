@@ -1,27 +1,30 @@
 <template>
-    <nav class="navbar flex">
-            <ul class="flex">
-                <li>
-                    <NuxtLink to="">Overview</NuxtLink>
-                </li>
-                <li>
-                    <NuxtLink to="">Notifications</NuxtLink>
-                </li>
-                <li>
-                    <NuxtLink to="">Analytics</NuxtLink>
-                </li>
-                <li>
-                    <NuxtLink to="">Saved reports</NuxtLink>
-                </li>
-                <li>
-                    <NuxtLink to="">Trade history</NuxtLink>
-                </li>
-                <li>
-                    <NuxtLink to="">User reports</NuxtLink>
-                </li>
-            </ul>
-            <Search startIcon="search" />
-    </nav>
+    <div>
+        <nav class="navbar flex">
+                <ul class="flex">
+                    <li>
+                        <NuxtLink to="">Overview</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="">Notifications</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="">Analytics</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="">Saved reports</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="">Trade history</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="">User reports</NuxtLink>
+                    </li>
+                </ul>
+                <Search startIcon="search" />
+        </nav>
+         <hr />
+    </div>
 </template>
 <style scoped>
     .navbar {
