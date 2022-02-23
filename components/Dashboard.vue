@@ -268,7 +268,7 @@ export default {
   }
   .header {
     margin-block: 3rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   .header .sub-heading {
