@@ -29,6 +29,7 @@
 <style scoped>
     .navbar {
         --gap: 1.688rem;
+        justify-content: space-between;
         align-items: center;
         margin-block: 10px;
     }
