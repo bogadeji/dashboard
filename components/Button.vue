@@ -34,7 +34,7 @@ export default {
         align-items: center;
         font-size: var(--fs, 14px);
         border-radius: 8px;
-        max-width: max-content;
+        width: max-content;
     }
     .base-button.outline {
         background-color: hsla(0, 0%, 100%, 1);
