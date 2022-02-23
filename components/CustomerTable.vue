@@ -212,20 +212,16 @@ export default {
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
 .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:not(:last-child) > td:not(.v-data-table__mobile-row),
 .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
-  border-top: unset;
-  border-bottom: unset;
+  border-top: unset !important;
+  border-bottom: unset !important;
 }
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
     .customer-table.theme--light.v-data-table > .v-data-table__wrapper > table td {
         padding: 12px 16px !important;
     }
-    .theme--light.v-data-table tbody tr.v-data-table__selected,
-    .theme--light.v-data-table tbody tr:hover {
-    background: unset
-}
 
 .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
-    background: none;
+    background: none !important;
 }
     .customer-table.theme--light.v-data-table  tbody tr:nth-child(2n+1),
     .theme--light.v-data-table tbody tr.v-data-table__selected:nth-child(2n+1),
