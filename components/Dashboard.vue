@@ -76,12 +76,12 @@ export default {
           }
         ],
         headers: [
-          { text: 'Company', align: 'start', value: 'name', width: '25%' },
-          { text: 'Licence use', value: 'licenseUse', align: 'start', width: '10%' },
+          { text: 'Company', align: 'start', value: 'name', width: '30%' },
+          { text: 'Licence use', value: 'licenseUse', align: 'start', width: '8%' },
           { text: 'Status', value: 'status', align: 'start', width: '10%' },
-          { text: 'Users', value: 'users', align: 'start', width: '15%' },
-          { text: 'About', value: 'about', align: 'start', width: '25%' },
-          { text: '', value: 'actions', sortable: false, align: 'end', align: 'start', width: '10%' }
+          { text: 'Users', value: 'users', align: 'start', width: '10%' },
+          { text: 'About', value: 'about', align: 'start', width: '30%' },
+          { text: '', value: 'actions', sortable: false, align: 'end', align: 'start', width: '8%' }
         ],
         customers: [
           {
@@ -89,7 +89,7 @@ export default {
             website: 'catalogapp.io',
             logo: 'catalog.svg',
             licenseUse: 80,
-            status: 'Customer',
+            status: 'customer',
             description: 'Content curating app',
             tagline: 'Brings all your news into one place',
             users: [

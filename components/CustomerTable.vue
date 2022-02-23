@@ -13,7 +13,7 @@
               :mobile-breakpoint="0"
               class="customer-table"
             >
-            <template v-slot:[`header.data-table-select`]="{ props, on }">
+            <template v-slot:[`header.data-table-select`]="{ props, on }" width="5%">
               <v-simple-checkbox
                 :value="props.value || props.indeterminate"
                 v-on="on"
@@ -128,6 +128,7 @@ export default {
   background: hsla(264, 100%, 98%, 1);
   height: 8px;
   border-radius: 4px;
+  width: 88px;
 }
 .indicator {
   background: hsla(259, 63%, 59%, 1);
@@ -218,6 +219,13 @@ export default {
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
     .customer-table.theme--light.v-data-table > .v-data-table__wrapper > table td {
         padding: 12px 16px !important;
+    }
+    .v-data-table > .v-data-table__wrapper > table > tbody > tr > td:not(:first-child):not(:last-child),
+    .customer-table.theme--light.v-data-table > .v-data-table__wrapper > table td:not(:first-child):not(:last-child) {
+        padding: 12px 16px 12px 0px !important;
+    }
+    .v-data-table__wrapper > table > thead > tr > th:not(:first-child) {
+      padding: 0px 16px 12px 0px!important;
     }
 
 .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
