@@ -210,9 +210,10 @@ export default {
     }
 .v-data-table > .v-data-table__wrapper > table > tbody > tr,
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
-.theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:not(:last-child) > td:not(.v-data-table__mobile-row) {
-  border-top: none;
-  border-bottom: none;
+.theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:not(:last-child) > td:not(.v-data-table__mobile-row),
+.theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+  border-top: unset;
+  border-bottom: unset;
 }
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
     .customer-table.theme--light.v-data-table > .v-data-table__wrapper > table td {
@@ -222,8 +223,9 @@ export default {
     .theme--light.v-data-table tbody tr:hover {
     background: unset
 }
+
 .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
-    background: unset;
+    background: none;
 }
     .customer-table.theme--light.v-data-table  tbody tr:nth-child(2n+1),
     .theme--light.v-data-table tbody tr.v-data-table__selected:nth-child(2n+1),
