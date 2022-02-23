@@ -77,8 +77,8 @@ export default {
         ],
         headers: [
           { text: 'Company', align: 'start', value: 'name', width: '30%' },
-          { text: 'Licence use', value: 'licenseUse', align: 'start', width: '8%' },
-          { text: 'Status', value: 'status', align: 'start', width: '10%' },
+          { text: 'Licence use', value: 'licenseUse', align: 'start', width: '10%' },
+          { text: 'Status', value: 'status', align: 'start', width: '9%' },
           { text: 'Users', value: 'users', align: 'start', width: '10%' },
           { text: 'About', value: 'about', align: 'start', width: '30%' },
           { text: '', value: 'actions', sortable: false, align: 'end', align: 'start', width: '8%' }

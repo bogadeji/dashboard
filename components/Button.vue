@@ -35,6 +35,7 @@ export default {
         font-size: var(--fs, 14px);
         border-radius: 8px;
         width: max-content;
+        max-width: max-content
     }
     .base-button.outline {
         background-color: hsla(0, 0%, 100%, 1);

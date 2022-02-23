@@ -13,7 +13,7 @@
               :mobile-breakpoint="0"
               class="customer-table"
             >
-            <template v-slot:[`header.data-table-select`]="{ props, on }" width="5%">
+            <template v-slot:[`header.data-table-select`]="{ props, on }" width="4%">
               <v-simple-checkbox
                 :value="props.value || props.indeterminate"
                 v-on="on"
