@@ -31,7 +31,17 @@
           <Search placeholder="Search" class="search" />
         </div>
 
-
+        <!-- <v-data-table
+              :headers="headers"
+              :items="customers"
+              :search="search"
+              show-select
+              single-select
+              item-key="name"
+              hide-default-footer
+              class="customer-table"
+            >
+        </v-data-table> -->
         <CustomerTable 
           :headers="headers"
           :customers="customers"
@@ -71,19 +81,19 @@ export default {
             align: 'start',
             value: 'name', 
           },
-          { text: 'Licence use', value: 'licenseUse' },
-          { text: 'Status', value: 'status' },
-          { text: 'Users', value: 'users' },
-          { text: 'About', value: 'about' },
-          { text: '', value: 'actions', sortable: false, align: 'end' }
+          { text: 'Licence use', value: 'licenseUse', align: 'start' },
+          { text: 'Status', value: 'status', align: 'start' },
+          { text: 'Users', value: 'users', align: 'start' },
+          { text: 'About', value: 'about', align: 'start' },
+          { text: '', value: 'actions', sortable: false, align: 'end', align: 'start' }
         ],
         customers: [
           {
             name: 'Catalog',
-            website: 'getcircooles.com',
+            website: 'catalogapp.io',
             logo: 'catalog.svg',
-            licenseUse: 90,
-            status: 'churned',
+            licenseUse: 80,
+            status: 'Customer',
             description: 'Content curating app',
             tagline: 'Brings all your news into one place',
             users: [
@@ -96,8 +106,8 @@ export default {
             logo: 'circooles.svg',
             licenseUse: 70,
             status: 'churned',
-            description: 'Content curating app',
-            tagline: 'Brings all your news into one place',
+            description: 'Design software',
+            tagline: 'Super lightweight design app',
             users: [
               {name: '',img: 'user6.svg',},{name: '',img: 'user7.svg',},{name: '',img: 'user8.svg',},{name: '',img: 'user9.svg',},{name: '',img: 'user10.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
             ]
@@ -108,8 +118,8 @@ export default {
             logo: 'cmdr.svg',
             licenseUse: 40,
             status: 'customer',
-            description: 'Design software',
-            tagline: 'Super lightweight design app',
+            description: 'Data prediction',
+            tagline: 'AI and machine learning data',
             users: [
               {name: '',img: 'user10.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user12.svg',},{name: '',img: 'user9.svg',},{name: '',img: 'user13.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
             ]
@@ -118,10 +128,10 @@ export default {
             name: 'Hourglass',
             website: 'hourglass.app',
             logo: 'hourglass.svg',
-            licenseUse: 80,
+            licenseUse: 90,
             status: 'customer',
-            description: 'Data prediction',
-            tagline: 'AI and machine learning data',
+            description: 'Productivity app',
+            tagline: 'time management and productivity',
             users: [
               {name: '',img: 'user5.svg',},{name: '',img: 'user2.svg',},{name: '',img: 'user6.svg',},{name: '',img: 'user7.svg',},{name: '',img: 'user11.svg',},{name: '',img: '',},{name: '',img: '',}
             ]
@@ -132,8 +142,8 @@ export default {
             logo: 'layers.svg',
             licenseUse: 30,
             status: 'churned',
-            description: 'Productivity app',
-            tagline: 'Time management and productivity',
+            description: 'Web app integrations',
+            tagline: 'Connect web apps seamlessly',
             users: [
               {name: '',img: 'user3.svg',},{name: '',img: 'user6.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user9.svg',},{name: '',img: 'user10.svg',}
             ]
@@ -144,8 +154,8 @@ export default {
             logo: 'quotient.svg',
             licenseUse: 20,
             status: 'customer',
-            description: 'Web app intergrations',
-            tagline: 'Connect web apps seamlessly',
+            description: 'Sales CRM',
+            tagline: 'Web-based sales doc management',
             users: [
               {name: '',img: 'user5.svg',},{name: '',img: 'user3.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user6.svg',},{name: '',img: 'user12.svg',},{name: '',img: '',}
             ]
@@ -156,8 +166,8 @@ export default {
             logo: 'sisyphus.svg',
             licenseUse: 50,
             status: 'customer',
-            description: 'Sales CRM',
-            tagline: 'Web-based sales doc management',
+            description: 'Automation and workflow',
+            tagline: 'Time tracking, invoicing and expenses',
             users: [
               {name: '',img: 'user7.svg',},{name: '',img: 'user12.svg',},{name: '',img: 'user8.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user11.svg',},{name: '',img: 'user4.svg',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',},{name: '',img: '',}
             ]

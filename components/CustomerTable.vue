@@ -1,15 +1,32 @@
 <template>
     <v-data-table
+              v-model="selected"
               :headers="headers"
               :items="customers"
               :search="search"
               show-select
+              item-key="name"
               hide-default-footer
               :page.sync="page"
               :items-per-page="itemsPerPage"
               @page-count="pageCount=$event"
+              :mobile-breakpoint="0"
               class="customer-table"
             >
+            <template v-slot:[`header.data-table-select`]="{ props, on }">
+              <v-simple-checkbox
+                :value="props.value || props.indeterminate"
+                v-on="on"
+                :indeterminate="props.indeterminate"
+                indeterminate-icon="mdi-minus"
+                off-icon="mdi-checkbox-blank-outline"
+                on-icon="mdi-check"
+                color="primary"
+              />
+        </template>
+        <template v-slot:[`item.data-table-select`]="{ isSelected, select }">
+        <v-simple-checkbox  :value="isSelected" @input="select($event)" indeterminate-icon="" off-icon="mdi-checkbox-blank-outline" on-icon="mdi-check"></v-simple-checkbox>
+        </template>
             <template v-slot:[`item.name`]="{ item }">
                 <div class="flex">
                   <div class="logo">
@@ -58,11 +75,17 @@
               </template>
 
               <template v-slot:footer>
-                <div class="flex footer">
-                  <v-pagination class="pagination" v-model="page" :length="pageCount" prev-icon="" next-icon=""></v-pagination>
-                  <div class="page-no"><span>Page {{page}} of {{pageCount}}</span></div>
+                <div>
+                  <div class="flex footer desktop-footer desktop-and-tablet">
+                    <v-pagination class="pagination" v-model="page" :length="pageCount" prev-icon="" next-icon=""></v-pagination>
+                    <div class="page-no"><span>Page {{page}} of {{pageCount}}</span></div>
+                  </div>
                 </div>
-
+                <div class="flex footer mobile-footer mobile-only">
+                  <v-pagination class="pagination previous" v-model="page" :length="pageCount" prev-icon="arrow_back"></v-pagination>
+                  <div class="page-no"><span>Page {{page}} of {{pageCount}}</span></div>
+                  <v-pagination class="pagination next" v-model="page" :length="pageCount" next-icon="arrow_forward"></v-pagination>
+                </div>
               </template>
             </v-data-table>
 </template>
@@ -87,7 +110,8 @@ export default {
         return {
             page: 1,
             pageCount: 0,
-            itemsPerPage: 10
+            itemsPerPage: 10,
+            selected: []
         }
     }
 }
@@ -143,11 +167,7 @@ export default {
         font-size: 12px;
         font-weight: var(--fs-bold);
     }
-    ::v-deep .v-checkbox {
-        /* border-radius: 0 0 8px 8px; */
-        color: red;
-
-    }
+    
 
     .footer {
       justify-content: space-between;
@@ -158,40 +178,36 @@ export default {
     }
     </style>
     <style>
-    ::v-deep .v-input--selection__input .mdi-checkbox-marked::before {
-        border-radius: 6px;
-        background: #7F56D9 !important;
-    }
-.v-input--selection__input .v-icon.mdi.theme--light.mdi-checkbox-blank-outline::before,
-.mdi-checkbox-blank-outline::before,
- .mdi-checkbox-marked::before {
-    font-size: 20px;
-    /* border: 1px solid red; */
-    border-radius: 6px;
+    .v-application .v-simple-checkbox .primary--text {
+      color: #7F56D9 !important;
+      caret-color: #7F56D9 !important;
     }
     .v-input--selection-controls__input .v-icon {
-        width: 50px;
-        height: 50px;
-        border-radius: 20px;
-        color: white;
-    display: flex;
-    align-self: center;
-    justify-content: center; 
-    align-content: center
-}
-.mdi-checkbox-blank-outline::before {
-    background-color: white;
-    border: 1px solid #7F56D9;
-    display: flex;
-    align-self: center;
-    justify-content: center; 
-    align-content: center
-}
-.mdi-checkbox-marked::before {
-    padding: 1px;
-    background-color: #7F56D9;
-    font-size: 25px;
-}
+        height: 20px;
+        width: 20px;
+        background: #F9F5FF;
+        border-radius: 6px;
+        border: 1px solid #7F56D9;
+        display: flex;
+        align-self: center;
+        justify-content: center; 
+        align-content: center
+    }
+    .v-input--selection-controls__input .v-icon.mdi.theme--light.mdi-checkbox-blank-outline {
+      background: #FFF;
+      border-color: hsla(216, 16%, 84%, 1);
+    }
+    .v-input--selection-controls__input .v-icon {
+      color: #7F56D9 !important;
+      caret-color: #7F56D9 !important;
+    }
+  .v-input--selection-controls__input .v-icon.mdi.theme--light.mdi-checkbox-blank-outline::before {
+      color: #fff !important;
+      caret-color: #fff !important;
+    }
+    .v-input--selection-controls__input .v-icon.mdi.theme--light.mdi::before {
+      font-size: 18px;
+    }
 .v-data-table > .v-data-table__wrapper > table > tbody > tr,
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
 .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:not(:last-child) > td:not(.v-data-table__mobile-row) {
@@ -200,11 +216,10 @@ export default {
 }
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
     .customer-table.theme--light.v-data-table > .v-data-table__wrapper > table td {
-        padding: 12px 24px 12px 24px !important;
+        padding: 12px 16px !important;
     }
     .theme--light.v-data-table tbody tr.v-data-table__selected,
     .theme--light.v-data-table tbody tr:hover {
-    /* background: #f5f5f5; */
     background: unset
 }
 .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
@@ -216,10 +231,8 @@ export default {
  
       background-color: hsla(210, 24%, 98%, 1);
     }
-.pagination ul li:not(:first-child):not(:last-child) {
-  display: none;
-}
-.pagination li button {
+
+.desktop-footer .pagination li button {
   padding: 0.5rem 1rem;
   width: min-content;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
@@ -228,21 +241,43 @@ export default {
   color: hsla(217, 23%, 27%, 1);
   font-size: 14px;
 }
-.pagination li button > * {
+.desktop-footer .pagination li button > * {
   display: none;
 }
-.pagination li:first-child button::after {
+.desktop-footer .pagination li:first-child button::after {
     content: 'Previous';
     visibility: visible;
     display: block;
     position: relative;
     font-size: 12px;
 }
-.pagination li:last-child button::after {
+.desktop-footer .pagination li:last-child button::after {
     content: 'Next';
     visibility: visible;
     display: block;
     position: relative;
     font-size: 12px;
+}
+.pagination ul li:not(:first-child):not(:last-child) {
+  display: none;
+}
+.mobile-footer .pagination.previous li:not(:first-child),
+.mobile-footer .pagination.next li:not(:last-child) {
+  display: none
+}
+.mobile-footer .pagination li button {
+  box-shadow: none;
+  border: none;
+}
+.mobile-footer > * {
+  display: inline-block
+}
+@media (max-width: 780px) {
+  .mobile-footer.mobile-only {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
 }
 </style>
