@@ -228,12 +228,26 @@ export default {
       padding: 0px 16px 12px 0px!important;
     }
 
-.theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
-    background: none !important;
-}
+/* .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: inherit !important;
+} */
+    .customer-table.theme--light.v-data-table  tbody tr,
+    .theme--light.v-data-table tbody tr.v-data-table__selected:nth-child(2n+1),
+    .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper),
+    .customer-table.theme--light.v-data-table  tbody tr:hover,
+    .theme--light.v-data-table tbody tr.v-data-table__selected:nth-child(2n+1):hover,
+    .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper)
+     {
+ 
+      background-color: #fff;
+    }
     .customer-table.theme--light.v-data-table  tbody tr:nth-child(2n+1),
     .theme--light.v-data-table tbody tr.v-data-table__selected:nth-child(2n+1),
-    .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:nth-child(2n+1):hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:nth-child(2n+1):hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper),
+    .customer-table.theme--light.v-data-table  tbody tr:nth-child(2n+1):hover,
+    .theme--light.v-data-table tbody tr.v-data-table__selected:nth-child(2n+1):hover,
+    .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:nth-child(2n+1):hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper)
+     {
  
       background-color: hsla(210, 24%, 98%, 1);
     }
