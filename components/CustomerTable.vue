@@ -33,8 +33,8 @@
                     <img :src="require('../static/customers/' + item.logo)" :alt="item.name" />
                   </div>
                   <div>
-                    <p class="name">{{item.name}}</p>
-                    <p class="website">{{item.website}}</p>
+                    <p class="name line-clamp">{{item.name}}</p>
+                    <p class="website line-clamp">{{item.website}}</p>
                   </div>
                 </div>
               </template>
@@ -56,8 +56,8 @@
               <template v-slot:[`item.about`]="{ item }">
                 <div class="">
                   <div>
-                    <p class="description">{{item.description}}</p>
-                    <p class="tagline">{{item.tagline}}</p>
+                    <p class="description line-clamp">{{item.description}}</p>
+                    <p class="tagline line-clamp">{{item.tagline}}</p>
                   </div>
                 </div>
               </template>
