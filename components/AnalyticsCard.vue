@@ -1,7 +1,7 @@
 <template>
     <div class="analysis-card flow">
         <div class="title flex">
-            <p class="fw-bold" >{{ data.description }}</p>
+            <p class="fw-bold line-clamp" >{{ data.description }}</p>
             <img src="~/static/icons/dot.svg" alt="" />
         </div>
         <div class="flex data">

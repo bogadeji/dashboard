@@ -5,8 +5,8 @@
       <div class="mx-comp">
         <div class="header flex">
             <div class="header-heading flow">
-                <h1 class="fs-600 fw-bold heading">Welcome back, Olivia</h1>
-                <p class="sub-heading">Track, manage and forecast your customers and orders.</p>
+                <h1 class="fs-600 fw-bold heading line-clamp">Welcome back, Olivia</h1>
+                <p class="sub-heading line-clamp">Track, manage and forecast your customers and orders.</p>
             </div>
             <div class="header-btns flex">
                 <Button outline ><img src="~/static/icons/import.svg" alt="" /> Import </Button>
