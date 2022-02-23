@@ -11,6 +11,7 @@
         border-radius: 8px;
         align-items: center;
         padding: 10px 14px;
+        width: 320px;
         max-width: 320px;
         color : #667085
     }
